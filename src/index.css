@@ -65,10 +65,6 @@
   cursor: pointer;
 }
 
-.human-js details summary:hover {
-  background-color: var(--border);
-}
-
 /* objects */
 .human-js .object > .entry.primitive:last-of-type {
   padding-bottom: 0.5rem;
