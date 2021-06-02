@@ -1,16 +1,10 @@
 .human-js {
   --bg: #22262e;
-  --tan: #de935f;
-  --red: #cc6660;
-  --white: #efefef;
-
   --key: #81a2be;
   --string: #b5bd68;
-
-  --yellow: #f0c674;
-  --purple: #b294bb;
-  --orange: #d8773b;
-  --aqua: #8abeb7;
+  --number: #f0c674;
+  --boolean: #b294bb;
+  --null: #d8773b;
   --border: #444;
   --base: #efefef;
 
@@ -21,30 +15,22 @@
   color: var(--base);
 }
 
-.human-js .entry .value {
-  margin-left: 0.5rem;
-  color: var(--green);
-}
-
-.human-js .entry .value.string:before {
-  content: '"';
-}
-
+.human-js .entry .value.string:before,
 .human-js .entry .value.string:after {
   content: '"';
 }
 
 .human-js .entry .value.number {
-  color: var(--yellow);
+  color: var(--number);
 }
 
 .human-js .entry .value.null,
 .human-js .entry .value.undefined {
-  color: var(--orange);
+  color: var(--null);
 }
 
 .human-js .entry .value.boolean {
-  color: var(--purple);
+  color: var(--boolean);
 }
 
 .human-js .entry .value.string {
@@ -69,7 +55,7 @@
 }
 
 .human-js .key:after {
-  content: ':';
+  content: ': ';
   color: var(--base);
 }
 
