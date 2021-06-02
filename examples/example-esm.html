@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <link rel="stylesheet" media="screen" href="../src/index.css" />
+  </head>
+
+  <body>
+    <div id="target"></div>
+
+    <script type="module">
+      import SampleData from "./data.js"
+      import HumanJs from "../dist/human-js.esm.js"
+      HumanJs.build(document.getElementById("target"), SampleData);
+    </script>
+
+  </body>
+</html>

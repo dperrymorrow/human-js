@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <link rel="stylesheet" media="screen" href="../src/index.css" />
+  </head>
+
+  <body>
+    <div id="target"></div>
+
+
+    <script src="../dist/human-js.umd.js"></script>
+
+    <script type="module">
+      HumanJs.build(document.getElementById("target"), { person: {name:"David", hobbies: ["bonsai", "hiking"] }});
+    </script>
+
+  </body>
+</html>

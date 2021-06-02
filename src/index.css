@@ -1,0 +1,116 @@
+.human-js {
+  --bg: #22262e;
+  --tan: #de935f;
+  --red: #cc6660;
+  --white: #efefef;
+
+  --key: #81a2be;
+  --string: #b5bd68;
+
+  --yellow: #f0c674;
+  --purple: #b294bb;
+  --orange: #d8773b;
+  --aqua: #8abeb7;
+  --border: #444;
+  --base: #efefef;
+
+  font-family: Monaco, monospace;
+  padding: 2rem;
+  line-height: 1.4rem;
+  background-color: var(--bg);
+  color: var(--base);
+}
+
+.human-js .entry .value {
+  margin-left: 0.5rem;
+  color: var(--green);
+}
+
+.human-js .entry .value.number {
+  color: var(--yellow);
+}
+
+.human-js .entry .value.null,
+.human-js .entry .value.undefined {
+  color: var(--orange);
+}
+
+.human-js .entry .value.boolean {
+  color: var(--purple);
+}
+
+.human-js .entry .value.string {
+  color: var(--string);
+}
+
+.human-js .object.empty > .key:after {
+  content: ': {}';
+}
+
+.human-js .empty.array > .key:after {
+  content: ': []';
+}
+
+.human-js .entry .entry {
+  margin-left: 0.3rem;
+  padding-left: 1rem;
+}
+
+.human-js .key {
+  color: var(--key);
+}
+
+.human-js .key:after {
+  content: ':';
+  color: var(--base);
+}
+
+.human-js details summary,
+.human-js details summary:active {
+  outline: none;
+  cursor: pointer;
+}
+
+.human-js details summary:hover {
+  background-color: var(--border);
+}
+
+/* objects */
+.human-js .object .entry.primitive:last-child {
+  padding-bottom: 0.5rem;
+}
+
+.human-js .object > .object {
+  border-left: 1px solid var(--border);
+}
+
+.human-js .object {
+  position: relative;
+}
+
+.human-js .entry {
+  position: relative;
+}
+
+.human-js .object > .entry {
+  border-left: 1px solid var(--border);
+}
+
+.human-js .object > .entry:last-child,
+.human-js > .object {
+  border: none;
+}
+
+.human-js .object > .entry .key:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0px;
+  border-bottom: 1px solid var(--border);
+  width: 0.5rem;
+  height: 0.7rem;
+}
+
+.human-js .object > .entry:last-child > .key:before {
+  border-left: 1px solid var(--border);
+}
