@@ -1,5 +1,5 @@
 {
-  "name": "human-js",
+  "name": "human-json",
   "version": "1.0.0",
   "description": "display javascript object in human readable format",
   "main": "index.js",
