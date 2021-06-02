@@ -9,7 +9,10 @@
     <script type="module">
       import SampleData from "./data.js"
       import HumanJs from "../dist/human-js.esm.js"
+      const start = new Date()
       HumanJs.build(document.getElementById("target"), SampleData);
+      const stop = new Date()
+      console.log("rendered in", stop - start, "miliseconds")
     </script>
 
   </body>

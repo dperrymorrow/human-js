@@ -22,32 +22,37 @@ export default {
   addNode($parent, [key, value]) {
     const type = this.findType(value);
     const isPrimitive = PRIMITIVE.includes(type);
-    const isEmpty = isPrimitive ? false : Object.keys(value).length === 0;
-
-    let $container;
 
     if (isPrimitive) {
-      $container = document.createElement('div');
-      $container.classList.add('primitive');
-
-      this.addKey($container, key);
-
-      const $value = document.createElement('span');
-      $value.innerHTML = value === null ? 'null' : value;
-      $value.classList.add('value', type);
-      $container.append($value);
+      $parent.append(this.addPrimitive(key, value, type));
     } else {
-      $container = document.createElement('details');
-      if (!isEmpty) $container.setAttribute('open', true);
-      else $container.classList.add('empty');
-
-      $container.classList.add('entry', 'non-primitive', type);
-      this.addKey($container, key, 'summary');
-      Object.entries(value).forEach((pair) => this.addNode($container, pair));
+      $parent.append(this.addNonPrimitive(key, value, type));
     }
+  },
 
-    $container.classList.add('entry', type);
-    $parent.append($container);
+  addPrimitive(key, value, type) {
+    const $container = document.createElement('div');
+    $container.classList.add('primitive', 'entry', type);
+
+    this.addKey($container, key);
+
+    const $value = document.createElement('span');
+    $value.innerHTML = value === null ? 'null' : value;
+    $value.classList.add('value', type);
+    $container.append($value);
+    return $container;
+  },
+
+  addNonPrimitive(key, value, type) {
+    const $container = document.createElement('details');
+    $container.classList.add('entry', 'non-primitive', type);
+
+    if (Object.keys(value).length) $container.setAttribute('open', true);
+    else $container.classList.add('empty');
+    this.addKey($container, key, 'summary');
+
+    Object.entries(value).forEach((pair) => this.addNode($container, pair));
+    return $container;
   },
 
   addKey($parent, key, nodeType = 'span') {

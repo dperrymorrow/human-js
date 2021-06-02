@@ -26,6 +26,14 @@
   color: var(--green);
 }
 
+.human-js .entry .value.string:before {
+  content: '"';
+}
+
+.human-js .entry .value.string:after {
+  content: '"';
+}
+
 .human-js .entry .value.number {
   color: var(--yellow);
 }
@@ -76,8 +84,9 @@
 }
 
 /* objects */
-.human-js .object .entry.primitive:last-child {
+.human-js .object > .entry.primitive:last-of-type {
   padding-bottom: 0.5rem;
+  /* background-color: purple; */
 }
 
 .human-js .object > .object {
