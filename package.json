@@ -2,7 +2,7 @@
   "name": "human-json",
   "version": "1.0.0",
   "description": "display javascript object in human readable format",
-  "main": "index.js",
+  "main": "dist/human-js-esm.js",
   "scripts": {
     "server": "http-server . -c=-1 -p=9003",
     "dev": "npm-run-all --parallel watch server",
@@ -29,7 +29,9 @@
     "rollup": "^2.50.2",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-gzip": "^2.5.0",
+    "rollup-plugin-postcss": "4.0.0",
     "rollup-plugin-strip": "^1.2.2",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "stylus": "0.54.8"
   }
 }

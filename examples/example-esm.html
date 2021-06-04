@@ -1,6 +1,12 @@
 <html>
   <head>
-    <link rel="stylesheet" media="screen" href="../src/index.css" />
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0
+      }
+    </style>
   </head>
 
   <body>
@@ -9,11 +15,12 @@
     <script type="module">
       import SampleData from "./data.js"
       import HumanJs from "../dist/human-js.esm.js"
+
       const start = new Date()
-      HumanJs.build(document.getElementById("target"), SampleData);
-      const stop = new Date()
-      console.log("rendered in", stop - start, "miliseconds")
+      document.getElementById("target").innerHTML = HumanJs.build(SampleData)
+      console.log("rendered in", new Date() - start, "miliseconds")
     </script>
 
   </body>
+
 </html>

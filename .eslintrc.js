@@ -11,5 +11,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'max-len': ['error', { code: 180 }],
+    'import/no-extraneous-dependencies': 0,
+    'no-param-reassign': 0,
+    'no-use-before-define': 0,
   },
 };

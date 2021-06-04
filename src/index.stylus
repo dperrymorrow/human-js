@@ -1,0 +1,79 @@
+.human-json
+  --bg: #22262e
+  --key: #81a2be
+  --string: #b5bd68
+  --number: #f0c674
+  --boolean: #b294bb
+  --null: #d8773b
+  --border: #444
+  --base: #efefef
+  font-family: Monaco, monospace
+  padding: 2rem
+  line-height: 1.4rem
+  background-color: var(--bg)
+  color: var(--base)
+
+  .entry
+    position: relative
+
+    .entry
+      margin-left: 0.3rem
+      padding-left: 1rem
+      border-left: 1px solid var(--border)
+
+    .primitive:last-of-type
+      padding-bottom: 0.5rem
+
+    > .entry .key:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0px
+      border-bottom: 1px solid var(--border)
+      width: 0.5rem
+      height: 0.7rem
+
+    &.empty > .key:after
+      content: ': {}'
+
+    &.empty.array > .key:after
+      content: ': []'
+
+    .key
+      color: var(--key)
+
+      &:after
+        content: ': '
+        color: var(--base)
+
+    .value
+      &.string
+        color: var(--string)
+
+        &:before, &.string:after
+          content: '"'
+
+      &.number
+        color: var(--number)
+
+      &.value.null, &.undefined
+        color: var(--null)
+
+      &.boolean
+        color: var(--boolean)
+
+  details
+    summary, summary:active
+      outline: none
+      cursor: pointer
+
+  > .object, .array
+    border: none
+
+  .array, .object
+    > .entry:last-child
+      border: none
+
+  .object, .array
+    > .entry:last-child > .key:before
+      border-left: 1px solid var(--border)

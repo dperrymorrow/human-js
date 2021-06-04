@@ -2,6 +2,7 @@ import { terser } from 'rollup-plugin-terser';
 import filesize from 'rollup-plugin-filesize';
 import gzipPlugin from 'rollup-plugin-gzip';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import postcss from 'rollup-plugin-postcss';
 
 export default [
   {
@@ -21,7 +22,7 @@ export default [
       },
     ],
 
-    plugins: [nodeResolve()],
+    plugins: [nodeResolve(), postcss({ modules: false })],
   },
   {
     input: 'src/index.js',
@@ -36,6 +37,6 @@ export default [
       },
     ],
 
-    plugins: [nodeResolve()],
+    plugins: [nodeResolve(), postcss({ modules: false })],
   },
 ];

@@ -1,0 +1,33 @@
+<html>
+
+  <head>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0
+      }
+
+      .custom .human-json {
+        --bg: #24282e;
+        --boolean: #ff80bf;
+        --base: #abb5cf;
+        --string: #8aff80;
+        --key: #ffff80;
+        --number: #268bd2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="custom"></div>
+
+    <script type="module">
+      import SampleData from "./data.js"
+      import HumanJs from "../dist/human-js.esm.js"
+      document.querySelector(".custom").innerHTML = HumanJs.build(SampleData);
+    </script>
+
+  </body>
+
+</html>

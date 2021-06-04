@@ -1,6 +1,12 @@
 <html>
+
   <head>
-    <link rel="stylesheet" media="screen" href="../src/index.css" />
+    <style>
+      body {
+        padding: 0;
+        margin: 0
+      }
+    </style>
   </head>
 
   <body>
@@ -10,8 +16,9 @@
     <script src="../dist/human-js.umd.js"></script>
 
     <script type="module">
-      HumanJs.build(document.getElementById("target"), { person: {name:"David", hobbies: ["bonsai", "hiking"] }});
+      document.getElementById("target").innerHTML = HumanJs.build({person: {name: "David", hobbies: ["bonsai", "hiking"]}});
     </script>
 
   </body>
+
 </html>
