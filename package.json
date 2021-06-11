@@ -4,6 +4,7 @@
   "description": "display javascript object in human readable format",
   "main": "dist/human-js-esm.js",
   "scripts": {
+    "prepare": "npm run build",
     "server": "http-server . -c=-1 -p=9003",
     "dev": "npm-run-all --parallel watch server",
     "watch": "rollup -c --watch",
