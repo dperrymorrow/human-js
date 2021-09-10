@@ -2,7 +2,7 @@
   "name": "human-json",
   "version": "1.1.0",
   "description": "display javascript object in human readable format",
-  "main": "dist/human-js-esm.js",
+  "main": "dist/human-js.esm.js",
   "scripts": {
     "prepare": "npm run build",
     "server": "http-server . -c=-1 -p=9003",

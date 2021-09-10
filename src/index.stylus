@@ -34,24 +34,20 @@
       height: 0.7rem
 
     &.empty > .key:after
-      content: ': {}'
+      content: '{}'
 
     &.empty.array > .key:after
-      content: ': []'
+      content: '[]'
 
     .key
       color: var(--key)
 
       &:after
-        content: ': '
         color: var(--base)
 
     .value
       &.string
         color: var(--string)
-
-        &:before, &.string:after
-          content: '"'
 
       &.number
         color: var(--number)
@@ -66,6 +62,9 @@
     summary, summary:active
       outline: none
       cursor: pointer
+
+      .divider
+        color: var(--base)
 
   > .object, .array
     border: none

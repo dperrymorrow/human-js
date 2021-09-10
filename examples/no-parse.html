@@ -1,0 +1,43 @@
+<html>
+
+  <head>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0
+      }
+
+      .boolean {
+        color: red;
+      }
+
+      .numeric {
+        color: green;
+      }
+
+      .nullish {
+        color: purple;
+      }
+
+      .string {
+        color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <pre id="target"></pre>
+
+    <script type="module">
+      import SampleData from "./data.js"
+      import HumanJs from "../src/no-parse.js"
+
+      const start = new Date()
+      document.getElementById("target").innerHTML = HumanJs.build(SampleData)
+      console.log("rendered in", new Date() - start, "miliseconds")
+    </script>
+
+  </body>
+
+</html>

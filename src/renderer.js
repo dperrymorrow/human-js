@@ -23,17 +23,20 @@ export default {
     let displayVal = value;
     if (value === null) displayVal = 'null';
     else if (value === undefined) displayVal = 'undefined';
+    else if (type === 'string') displayVal = `"${displayVal}"`;
 
     return `<div class="primitive entry ${type}">
-      <span class="key">${key}</span>
+      <span class="key">${key}</span>:
       <span class="value ${type}">${displayVal}</span>
     </div>`;
   },
 
   addNonPrimitive(key, value, type) {
-    const isEmpty = !Object.keys.length;
+    const isEmpty = !Object.keys(value).length;
     return `<details class="entry non-primitive ${type} ${isEmpty ? 'empty' : ''}" ${isEmpty ? '' : 'open'}>
-      <summary class="key">${key}</summary>
+      <summary class="key">
+        ${key}<span class="divider">:</span>
+      </summary>
       ${this.entriesFromObj(value)}
     </details>`;
   },
